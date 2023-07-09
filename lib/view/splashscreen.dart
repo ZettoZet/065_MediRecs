@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:finalexam/register.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
@@ -32,7 +33,7 @@ class _SplashscreenState extends State<Splashscreen>
     return AnimatedSplashScreen(
       splash: Lottie.asset('assets/logo.json'),
       backgroundColor: Colors.blue,
-      nextScreen: const Splashscreen(),
+      nextScreen: const Register(),
       duration: 3000,
       splashTransition: SplashTransition.fadeTransition,
       pageTransitionType: PageTransitionType.fade,
