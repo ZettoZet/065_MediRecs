@@ -1,7 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:finalexam/controller/penyakit_controller.dart';
+import 'package:finalexam/controller/poli_controller.dart';
 import 'package:finalexam/controller/records_controller.dart';
 import 'package:finalexam/icons/custom_icons.dart';
-
+import 'package:finalexam/login.dart';
+import 'package:finalexam/view/admin/home/add_records.dart';
+import 'package:finalexam/view/admin/home/records_admin.dart';
+import 'package:finalexam/view/admin/penyakit/penyakit.dart';
+import 'package:finalexam/view/admin/poli/poli.dart';
+import 'package:finalexam/view/admin/profil/profil_dokter_admin.dart';
 import 'package:flutter/material.dart';
 
 class AdminHome extends StatefulWidget {
@@ -12,10 +19,14 @@ class AdminHome extends StatefulWidget {
 }
 
 class _AdminHomeState extends State<AdminHome> {
+  var pec = PenyakitController();
+  var poc = PoliController();
   var rec = RecordsController();
 
   @override
   void initState() {
+    pec.getPenyakit();
+    poc.getPoli();
     rec.getRecords();
     super.initState();
   }
@@ -54,8 +65,13 @@ class _AdminHomeState extends State<AdminHome> {
                       padding: const EdgeInsets.all(5.0),
                       child: InkWell(
                         onLongPress: () {
-                          Navigator.pop(
-                            context
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RecordsAdmin(
+                                id: data[index].id,
+                              ),
+                            ),
                           );
                         },
                         child: Card(
@@ -162,7 +178,7 @@ class _AdminHomeState extends State<AdminHome> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const AdminHome(),
+                          builder: (context) => const ProfilDokterAdmin(),
                         ),
                       );
                     },
@@ -174,7 +190,7 @@ class _AdminHomeState extends State<AdminHome> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const AdminHome(),
+                          builder: (context) => const Poli(),
                         ),
                       );
                     },
@@ -186,7 +202,7 @@ class _AdminHomeState extends State<AdminHome> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const AdminHome(),
+                          builder: (context) => const Penyakit(),
                         ),
                       );
                     },
@@ -212,7 +228,7 @@ class _AdminHomeState extends State<AdminHome> {
               onTap: () async {
                 Navigator.pushAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (context) => const AdminHome()),
+                  MaterialPageRoute(builder: (context) => const Login()),
                   (route) => false,
                 );
               },
@@ -225,7 +241,7 @@ class _AdminHomeState extends State<AdminHome> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const AdminHome(),
+              builder: (context) => const AddRecords(),
             ),
           );
         },
