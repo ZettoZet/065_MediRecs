@@ -3,6 +3,9 @@ import 'package:finalexam/controller/penyakit_controller.dart';
 import 'package:finalexam/controller/poli_controller.dart';
 import 'package:finalexam/icons/custom_icons.dart';
 import 'package:finalexam/login.dart';
+import 'package:finalexam/view/admin/home/admin.dart';
+import 'package:finalexam/view/admin/poli/poli.dart';
+import 'package:finalexam/view/admin/profil/profil_dokter_admin.dart';
 import 'package:flutter/material.dart';
 
 class Penyakit extends StatefulWidget {
@@ -159,7 +162,7 @@ class _PenyakitState extends State<Penyakit> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Penyakit(),
+                          builder: (context) => const AdminHome(),
                         ),
                       );
                     },
@@ -171,7 +174,7 @@ class _PenyakitState extends State<Penyakit> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Penyakit(),
+                          builder: (context) => const ProfilDokterAdmin(),
                         ),
                       );
                     },
@@ -183,7 +186,7 @@ class _PenyakitState extends State<Penyakit> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Penyakit(),
+                          builder: (context) => const Poli(),
                         ),
                       );
                     },
