@@ -1,3 +1,6 @@
+import 'package:finalexam/controller/auth_controller.dart';
+import 'package:finalexam/login.dart';
+import 'package:finalexam/model/user_model.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -9,6 +12,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final formkey = GlobalKey<FormState>();
+  final authCtr = AuthController();
   String? name;
   String? email;
   String? password;
@@ -134,6 +138,69 @@ class _RegisterState extends State<Register> {
                                     },
                                     child: const Text('Cancel'),
                                   ),
+                                  TextButton(
+                                    onPressed: () async {
+                                      Navigator.pop(context);
+                                      UserModel? registeredUser = await authCtr
+                                          .registerWithEmailAndPassword(
+                                        email!,
+                                        password!,
+                                        name!,
+                                      );
+                                      if (registeredUser != null) {
+                                        // Registration successful
+                                        // ignore: use_build_context_synchronously
+                                        showDialog(
+                                          context: currentContext,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: const Text('Register'),
+                                              content: const Text(
+                                                  'Register Successfully'),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) {
+                                                          return const Login();
+                                                        },
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: const Text('OK'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      } else {
+                                        // Registration failed
+                                        // ignore: use_build_context_synchronously
+                                        showDialog(
+                                          context: context,
+                                          builder: (BuildContext context) {
+                                            return AlertDialog(
+                                              title: const Text(
+                                                  'Registration Failed'),
+                                              content: const Text(
+                                                  'An error occurred during registration.'),
+                                              actions: <Widget>[
+                                                TextButton(
+                                                  onPressed: () {
+                                                    Navigator.pop(context);
+                                                  },
+                                                  child: const Text('OK'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
+                                      }
+                                    },
+                                    child: const Text('Confirm'),
+                                  ),
                                 ],
                               );
                             },
@@ -157,7 +224,7 @@ class _RegisterState extends State<Register> {
                             onTap: () {
                               Navigator.of(context).push(
                                 MaterialPageRoute(
-                                  builder: (_) => const Register(),
+                                  builder: (_) => const Login(),
                                 ),
                               );
                             },
