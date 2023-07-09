@@ -1,11 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:finalexam/controller/poli_controller.dart';
-import 'package:finalexam/icons/custom_icons.dart';
-import 'package:finalexam/login.dart';
-import 'package:finalexam/view/admin/home/admin.dart';
-import 'package:finalexam/view/admin/penyakit/penyakit.dart';
-import 'package:finalexam/view/admin/profil/profil_dokter_admin.dart';
+import 'package:finalexam/view/admin/poli/update_poli.dart';
 import 'package:flutter/material.dart';
+
+import '../../../controller/poli_controller.dart';
+import '../../../icons/custom_icons.dart';
+import '../../../login.dart';
+import '../../../model/poli_model.dart';
+import '../home/admin.dart';
+import '../penyakit/penyakit.dart';
+import '../profil/profil_dokter_admin.dart';
+import 'add_poli.dart';
 
 class Poli extends StatefulWidget {
   const Poli({Key? key}) : super(key: key);
@@ -61,7 +65,11 @@ class _PoliState extends State<Poli> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Poli(),
+                                builder: (context) => UpdatePoli(
+                                  poliModel: PoliModel.fromMap(data[index]
+                                      .data() as Map<String, dynamic>),
+                                  poli: data[index],
+                                ),
                               ),
                             );
                           },
@@ -234,7 +242,7 @@ class _PoliState extends State<Poli> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Poli(),
+              builder: (context) => const AddPoli(),
             ),
           );
         },
