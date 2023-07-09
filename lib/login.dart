@@ -1,5 +1,8 @@
 import 'package:finalexam/controller/auth_controller.dart';
 import 'package:finalexam/model/user_model.dart';
+import 'package:finalexam/view/admin/home/admin.dart';
+import 'package:finalexam/view/dokter/dokter.dart';
+
 import 'package:flutter/material.dart';
 import 'register.dart';
 
@@ -120,14 +123,24 @@ class _LoginState extends State<Login> {
                             // Login success
                             if (loginUser.role == 'admin') {
                               // ignore: use_build_context_synchronously
-                              Navigator.pop(context
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const AdminHome();
+                                  },
+                                ),
                               );
                             } else {
                               // User login success
                               // ignore: use_build_context_synchronously
-                              Navigator.pop(
-                                context
-                                
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return const DokterHome();
+                                  },
+                                ),
                               );
                             }
                           } else {
