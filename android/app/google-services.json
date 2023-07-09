@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "304015129671",
-    "project_id": "fepaml",
-    "storage_bucket": "fepaml.appspot.com"
+    "project_number": "718571895690",
+    "project_id": "medirec-a6fcc",
+    "storage_bucket": "medirec-a6fcc.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:304015129671:android:d5f78cae46bcfcafbf8562",
+        "mobilesdk_app_id": "1:718571895690:android:d499b29d6ac3a2ad54e673",
         "android_client_info": {
-          "package_name": "com.example.finalexamtes"
+          "package_name": "com.example.finalexam"
         }
       },
       "oauth_client": [
         {
-          "client_id": "304015129671-jb58a25i5ca9a49cvuff850af0b2hqfi.apps.googleusercontent.com",
+          "client_id": "718571895690-1oij9dsrlf43fv9jef66it3qpka018gi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCDBfq75yAQ0VF57r_-17XwqhFhrWSca7Y"
+          "current_key": "AIzaSyCp0fcYjzgAfLPAtUreH2NteDSjq9Xi6JQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "304015129671-jb58a25i5ca9a49cvuff850af0b2hqfi.apps.googleusercontent.com",
+              "client_id": "718571895690-1oij9dsrlf43fv9jef66it3qpka018gi.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
