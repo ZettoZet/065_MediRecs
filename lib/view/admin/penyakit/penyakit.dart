@@ -1,12 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:finalexam/controller/penyakit_controller.dart';
-import 'package:finalexam/controller/poli_controller.dart';
-import 'package:finalexam/icons/custom_icons.dart';
-import 'package:finalexam/login.dart';
-import 'package:finalexam/view/admin/home/admin.dart';
-import 'package:finalexam/view/admin/poli/poli.dart';
-import 'package:finalexam/view/admin/profil/profil_dokter_admin.dart';
 import 'package:flutter/material.dart';
+
+import '../../../controller/poli_controller.dart';
+import '../../../icons/custom_icons.dart';
+import '../../../login.dart';
+import '../../../model/penyakit_model.dart';
+import '../home/admin.dart';
+import '../poli/poli.dart';
+import '../profil/profil_dokter_admin.dart';
+import 'add_penyakit.dart';
+import 'update_penyakit.dart';
 
 class Penyakit extends StatefulWidget {
   const Penyakit({super.key});
@@ -63,7 +67,11 @@ class _PenyakitState extends State<Penyakit> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Penyakit(
+                                builder: (context) => UpdatePenyakit(
+                                  penyakitModel: PenyakitModel.fromMap(
+                                      data[index].data()
+                                          as Map<String, dynamic>),
+                                  penyakit: data[index],
                                 ),
                               ),
                             );
@@ -237,7 +245,7 @@ class _PenyakitState extends State<Penyakit> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Penyakit(),
+              builder: (context) => const AddPenyakit(),
             ),
           );
         },
