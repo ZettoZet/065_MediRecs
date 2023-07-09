@@ -4,6 +4,7 @@ import 'package:finalexam/icons/custom_icons.dart';
 import 'package:finalexam/login.dart';
 import 'package:finalexam/view/admin/home/admin.dart';
 import 'package:finalexam/view/admin/penyakit/penyakit.dart';
+import 'package:finalexam/view/admin/profil/profil_dokter_admin.dart';
 import 'package:flutter/material.dart';
 
 class Poli extends StatefulWidget {
@@ -170,7 +171,7 @@ class _PoliState extends State<Poli> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Poli(),
+                          builder: (context) => const ProfilDokterAdmin(),
                         ),
                       );
                     },
