@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "304015129671",
+    "project_id": "fepaml",
+    "storage_bucket": "fepaml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304015129671:android:d5f78cae46bcfcafbf8562",
+        "android_client_info": {
+          "package_name": "com.example.finalexamtes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304015129671-jb58a25i5ca9a49cvuff850af0b2hqfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDBfq75yAQ0VF57r_-17XwqhFhrWSca7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304015129671-jb58a25i5ca9a49cvuff850af0b2hqfi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
